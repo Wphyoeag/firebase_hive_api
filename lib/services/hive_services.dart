@@ -4,7 +4,7 @@ import '../model/user_model.dart';
 import '../model/user_model_adaptor.dart';
 
 class HiveServices {
-  static Future<void> initHive() async {
+  static Future<void>  initHive() async {
     final appDocumentDir = await getApplicationDocumentsDirectory();
     Hive.init(appDocumentDir.path);
     Hive.registerAdapter<UserModel>(UserModelAdapter());

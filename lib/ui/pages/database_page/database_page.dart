@@ -19,11 +19,10 @@ class DatabasePage extends StatelessWidget {
           padding: EdgeInsets.all(8.0),
           child: FlutterLogo(size: 0),
         ),
-        title:  Text(AppLocalizations.of(context).storage),
+        title: Text(AppLocalizations.of(context)!.storage),
       ),
-      
-      backgroundColor:  const Color.fromARGB(255, 3, 85, 5),
-      body:  const Column(
+      backgroundColor: const Color.fromARGB(255, 3, 85, 5),
+      body: const Column(
         children: [
           UserUi(),
           // addUser.isEmpty?

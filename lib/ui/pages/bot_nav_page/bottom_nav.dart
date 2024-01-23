@@ -7,14 +7,11 @@ import '../../../providers/bottom_nav_provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class BottomNavPage extends ConsumerWidget {
-  final List<Widget> _widgetOptions = [
-    const HomePage(),
-    const DatabasePage()
-  ];
-   BottomNavPage({super.key});
+  final List<Widget> _widgetOptions = [const HomePage(), const DatabasePage()];
+  BottomNavPage({super.key});
 
   @override
-  Widget build(BuildContext context,ref) {
+  Widget build(BuildContext context, ref) {
     var navIndex = ref.watch(bottomNavIndexProvider);
     return BottomNavView(
       title: 'Guess',
@@ -22,20 +19,20 @@ class BottomNavPage extends ConsumerWidget {
       bodyBackgroundColor: Colors.white,
       bodyWidget: _widgetOptions.elementAt(navIndex),
       navIndex: navIndex,
-      items:  [
-              BottomNavigationBarItem(
-                icon: const Icon(
-                  Icons.home,
-                ),
-                label: AppLocalizations.of(context).product,
-              ),
-              BottomNavigationBarItem(
-                icon: const Icon(
-                  Icons.settings,
-                ),
-                label: AppLocalizations.of(context).storage,
-              ),
-            ],
+      items: [
+        BottomNavigationBarItem(
+          icon: const Icon(
+            Icons.home,
+          ),
+          label: AppLocalizations.of(context)!.product,
+        ),
+        BottomNavigationBarItem(
+          icon: const Icon(
+            Icons.settings,
+          ),
+          label: AppLocalizations.of(context)!.storage,
+        ),
+      ],
     );
   }
 }
@@ -59,7 +56,6 @@ class BottomNavView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    
     // var bloc = ref.watch(bottomNavProvider);
 
     return Scaffold(

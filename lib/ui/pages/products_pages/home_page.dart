@@ -32,7 +32,7 @@ class HomePage extends ConsumerWidget {
     });
     return Scaffold(
         appBar: AppBar(
-          title: Text(AppLocalizations.of(context).appbartitle),
+          title: Text(AppLocalizations.of(context)!.appbartitle),
           backgroundColor: const Color.fromARGB(255, 3, 85, 5),
           actions: [
             IconButton(
@@ -159,7 +159,7 @@ class HomePage extends ConsumerWidget {
                   builder: (_) {
                     return AlertDialog(
                       content: Text(
-                        AppLocalizations.of(context).sureLogOut,
+                        AppLocalizations.of(context)!.sureLogOut,
                         style: const TextStyle(fontSize: 18),
                       ),
                       actions: [
@@ -173,18 +173,18 @@ class HomePage extends ConsumerWidget {
                                   MaterialPageRoute(
                                       builder: (_) => const MainPage()));
                             },
-                            child: Text(AppLocalizations.of(context).ok)),
+                            child: Text(AppLocalizations.of(context)!.ok)),
                         ElevatedButton(
                             onPressed: () {
                               Navigator.pop(context);
                             },
-                            child: Text(AppLocalizations.of(context).cancel))
+                            child: Text(AppLocalizations.of(context)!.cancel))
                       ],
                     );
                   });
             },
             title: Text(
-              AppLocalizations.of(context).logout,
+              AppLocalizations.of(context)!.logout,
               style: const TextStyle(fontSize: 16),
             ),
             leading: const Icon(Icons.logout),
